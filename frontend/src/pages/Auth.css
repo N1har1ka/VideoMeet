@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  flex: 1.2;
+  background-image: url("https://images.unsplash.com/photo-1752542362589-a5668de3b1c1?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+}
+
+.right-panel {
+  flex: 1;
+  background: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form-toggle input[type="radio"] {
+  display: none;
+}
+
+.form-toggle label {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+  background: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.form-toggle input[type="radio"]:checked + label {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+.form-container {
+  position: relative;
+}
+
+form {
+  display: none;
+  flex-direction: column;
+}
+
+.login-form,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #1565c0;
+}
+
+/* Show form based on radio */
+#login-tab:checked ~ .form-container .login-form {
+  display: flex;
+}
+
+#signup-tab:checked ~ .form-container .signup-form {
+  display: flex;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    height: 40vh;
+  }
+
+  .right-panel {
+    height: 60vh;
+  }
+}
